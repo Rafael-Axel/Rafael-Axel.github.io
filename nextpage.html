@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>for ayang</title>
+  <link rel="stylesheet" href="/ayang/bootstrap/css/bootstrap.min.css"> 
+  <style>
+    @font-face {
+      font-family: 'Dosis-Bold';
+      src: url('/ayang/font/Dosis-Bold.ttf') format('truetype');
+    }
+    body {
+      font-family: 'Dosis-Bold', sans-serif; 
+      cursor: url('/ayang/gif/paw1.png'), auto; 
+      overflow: hidden; 
+      margin: 0; 
+      padding: 0; 
+      width: 100vw; 
+      height: 100vh; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: gradientAnimation 15s ease infinite; 
+      background-color: #ffecf2; 
+    }
+    @keyframes gradientAnimation {
+      0%, 100% {
+        background-color: #ffecf2; 
+      }
+      25%, 50%, 75% {
+        background-color: #f64a73; 
+      }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative; 
+      z-index: -1; 
+    }
+    h1 {
+      font-size: 75px;
+      color: #ffffff; 
+      text-shadow: 2px 2px 2px #f48fb1; 
+      margin-bottom: 0px;
+    }
+    h2 {
+      font-size: 35px;
+      color: #ffffff; 
+      text-shadow: 2px 2px 2px #f48fb1; 
+      margin-bottom: 10px;
+    }
+    .heart-gif {
+      width: 500px; 
+      height: auto; 
+    }
+    .side-image {
+      position: absolute;
+      width: 150px; 
+      height: auto; 
+      z-index: -1; 
+      margin: 60px; 
+    }
+    .left-top {
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%) rotate(-45deg); 
+    }
+    .right-top {
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%) rotate(45deg); 
+    }
+    .left-bottom {
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 50%) rotate(45deg);
+    }
+    .right-bottom {
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 50%) rotate(-45deg); 
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+    <h1>♡</h1>
+    <h2>YEAYY!! LOVE YOU MORE＾＾</h2>
+    <img src="/ayang/gif/heart-love.gif" alt="Heart Love" class="heart-gif">
+  </div>
+  <img src="/ayang/gif/43f5bbaf17d061377206243140e855d8.gif" alt="Left Top" class="side-image left-top">
+  <img src="/ayang/gif/cat_-vodk.gif" alt="Right Top" class="side-image right-top">
+  <img src="/ayang/gif/peach-goma-peach-and-goma.gif" alt="Left Bottom" class="side-image left-bottom">
+  <img src="/ayang/gif/peach-and-goma-peach-goma.gif" alt="Right Bottom" class="side-image right-bottom">
+</body>
+</html>

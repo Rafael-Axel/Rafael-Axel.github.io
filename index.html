@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>for ayang</title>
+  <link rel="stylesheet" href="/ayang/bootstrap/css/bootstrap.min.css">
+  <style>
+    @font-face {
+      font-family: 'Dosis-Bold';
+      src: url('/ayang/font/Dosis-Bold.ttf') format('truetype');
+    }
+    body {
+      font-family: 'Dosis-Bold', sans-serif;
+      cursor: url('/ayang/gif/paw1.png'), auto; 
+      overflow: hidden;
+      margin: 0; 
+      padding: 0;
+      width: 100vw; 
+      height: 100vh; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: gradientAnimation 15s ease infinite; 
+    }
+    @keyframes gradientAnimation {
+      0% {
+        background-color: #ffecf2; 
+      }
+      25% {
+        background-color: #ff8ba7;
+      }
+      50% {
+        background-color: #f64a73; 
+      }
+      75% {
+        background-color: #e71d36;
+      }
+      100% {
+        background-color: #ffecf2; 
+      }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 42px;
+      color: #ffffff; 
+      text-shadow: 2px 2px 2px #f48fb1; 
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 35px;
+      color: #ffffff; 
+      text-shadow: 2px 2px 2px #f48fb1; 
+      margin-bottom: 0px;
+    }
+    h3 {
+      font-size: 20px;
+      color: #000000; 
+      text-shadow: 2px 2px 2px #f48fb1; 
+      margin-bottom: 0px;
+    }
+    .btn-primary {
+      background-color: #ff4081; 
+      border-color: #ff4081; 
+      font-weight: bold;
+      padding: 5px 20px;
+      font-size: 18px;
+      margin: 0 10px; 
+      position: absolute; 
+      left: 40%; 
+      top: 85%; 
+      color: #ffecf2; 
+    }
+    .btn-primary:hover {
+      background-color: #f50057; 
+      border-color: #f50057; 
+    }
+    .btn-danger {
+      background-color: #ff4081; 
+      border-color: #ff4081; 
+      font-weight: bold;
+      padding: 5px 20px;
+      font-size: 18px;
+      margin: 0 10px; 
+      position: absolute; 
+      left: 54%; 
+      top: 85%; 
+      transition: transform 0.1s; 
+      color: #ffecf2; 
+    }
+    .cat-images {
+      display: flex;
+      justify-content: space-between;
+      width: 750px; 
+      height: auto;
+      margin-bottom: 20px; 
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); 
+    }
+    .cat-images img {
+      width: 200px; 
+      height: auto; 
+      border: none; 
+    }
+    #message {
+      font-size: 20px;
+      display: none;
+      position: absolute;
+      top: 10%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 2s infinite; 
+      background-color: rgba(255, 255, 0, 0.5); 
+      border-radius: 8px;
+      padding: 5px 20px;
+      color: #ffecf2; 
+    }
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+    <h2>Sayangku cintaku luvluvkuuu. I want to ask....</h2>
+    <h1>Do you really love me?</h1>
+    <div class="cat-images">
+      <img src="/ayang/gif/cat-love.gif" alt="Cat Love">
+      <img src="/ayang/gif/goma-goma-cat.gif" alt="Goma Goma Cat">
+      <img src="/ayang/gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
+    </div>
+    <h3>please jangan tekan NO...I Warn You</h3>
+    <div class="button-container">
+      <button id="yesButton" class="btn btn-primary">Yes</button>
+      <button id="noButton" class="btn btn-danger">No</button>
+    </div>
+    <div id="message">pweaseee??? (╥﹏╥)</div>
+  </div>
+
+  <script>
+    document.getElementById('yesButton').addEventListener('click', function() {
+      window.location.href = 'nextpage.html';
+    });
+
+    const noButton = document.getElementById('noButton');
+    const message = document.getElementById('message');
+    let count = 0;
+
+    function moveButton() {
+      const maxX = window.innerWidth - noButton.clientWidth;
+      const maxY = window.innerHeight - noButton.clientHeight;
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+      noButton.style.left = newX + 'px';
+      noButton.style.top = newY + 'px';
+      noButton.style.transition = 'left 0.2s, top 0.2s'; 
+
+      count++;
+      if (count >= 5) {
+        message.style.display = 'block'; 
+      }
+    }
+    noButton.addEventListener('mouseenter', moveButton); 
+  </script>
+</body>
+</html>
