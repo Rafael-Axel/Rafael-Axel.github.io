@@ -47,26 +47,26 @@
       align-items: center;
     }
     h1 {
-      font-size: 28px;
+      font-size: 28px; /* Ukuran huruf responsif */
       color: #ffffff; 
       text-shadow: 1px 1px 1px #f48fb1; 
       margin-bottom: 15px;
     }
     h2 {
-      font-size: 24px;
+      font-size: 24px; /* Ukuran huruf responsif */
       color: #ffffff; 
       text-shadow: 1px 1px 1px #f48fb1; 
       margin-bottom: 10px;
     }
     h3 {
-      font-size: 16px;
+      font-size: 16px; /* Ukuran huruf responsif */
       color: #000000; 
       text-shadow: 1px 1px 1px #f48fb1; 
       margin-bottom: 10px;
     }
     .cat-images {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Menyusun gambar dalam beberapa baris */
       justify-content: center;
       gap: 10px;
       margin-bottom: 20px; 
@@ -74,37 +74,51 @@
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); 
     }
     .cat-images img {
-      width: 120px;
-      height: auto;
+      width: 120px; /* Ukuran gambar responsif */
+      height: auto; /* Tinggi otomatis */
       border-radius: 8px;
     }
     .button-container {
       display: flex;
       justify-content: center;
-      position: relative;
       margin-bottom: 20px;
     }
-    .btn-primary,
+    .btn-primary {
+      background-color: #ff4081; 
+      border-color: #ff4081; 
+      font-weight: bold;
+      padding: 8px 20px;
+      font-size: 18px;
+      margin: 0 10px; 
+      position: absolute; 
+      left: 40%; 
+      top: 70%; 
+      color: #ffecf2; 
+    }
+    .btn-primary:hover {
+      background-color: #f50057; 
+      border-color: #f50057; 
+    }
     .btn-danger {
       background-color: #ff4081; 
       border-color: #ff4081; 
       font-weight: bold;
       padding: 8px 20px;
       font-size: 18px;
+      margin: 0 10px; 
+      position: absolute; 
+      left: 54%; 
+      top: 70%; 
+      transition: transform 0.1s; 
       color: #ffecf2; 
     }
-    .btn-primary:hover,
-    .btn-danger:hover {
-      background-color: #f50057; 
-      border-color: #f50057; 
-    }
     #message {
-      font-size: 16px;
+      font-size: 16px; /* Ukuran huruf responsif */
       display: none;
       position: absolute;
-      top: 10%;
+      top: 10%; 
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       animation: pulse 2s infinite; 
       background-color: rgba(255, 255, 0, 0.5); 
       border-radius: 8px;
@@ -113,15 +127,15 @@
     }
     @keyframes pulse {
       0% {
-        transform: translateX(-50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 0.5;
       }
       50% {
-        transform: translateX(-50%) scale(1.2);
+        transform: translate(-50%, -50%) scale(1.2);
         opacity: 1;
       }
       100% {
-        transform: translateX(-50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 0.5;
       }
     }
@@ -148,14 +162,6 @@
       #message {
         font-size: 14px;
       }
-      .button-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn-primary,
-      .btn-danger {
-        margin: 5px;
-      }
     }
   </style>
 </head>
@@ -172,8 +178,8 @@
     <div class="button-container">
       <button id="yesButton" class="btn btn-primary">Yes</button>
       <button id="noButton" class="btn btn-danger">No</button>
-      <div id="message">pweaseee??? (╥﹏╥)</div>
     </div>
+    <div id="message">pweaseee??? (╥﹏╥)</div>
   </div>
 
   <script>
@@ -185,7 +191,7 @@
     const message = document.getElementById('message');
     let count = 0;
 
-    function moveButton(event) {
+    function moveButton() {
       const maxX = window.innerWidth - noButton.clientWidth;
       const maxY = window.innerHeight - noButton.clientHeight;
       const newX = Math.floor(Math.random() * maxX);
@@ -199,12 +205,8 @@
         message.style.display = 'block'; 
       }
     }
-
-    noButton.addEventListener('mouseenter', moveButton);
+    noButton.addEventListener('mouseenter', moveButton); 
     noButton.addEventListener('touchstart', moveButton);
-
-    // Tambahkan event listener untuk desktop (saat hover mouse)
-    noButton.addEventListener('mouseover', moveButton);
   </script>
 </body>
 </html>
