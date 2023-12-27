@@ -199,9 +199,12 @@
         message.style.display = 'block'; 
       }
     }
-    
+
     noButton.addEventListener('mouseenter', moveButton);
     noButton.addEventListener('touchstart', moveButton);
+
+    // Tambahkan event listener untuk desktop (saat hover mouse)
+    noButton.addEventListener('mouseover', moveButton);
   </script>
 </body>
 </html>
