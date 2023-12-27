@@ -3,37 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>for ayang</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Menambahkan meta viewport -->
   <link rel="stylesheet" href="/ayang/assets/css/bootstrap.min.css">
   <style>
-
-    @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 32px;
-      }
-      h2 {
-        font-size: 28px;
-      }
-      h3 {
-        font-size: 16px;
-      }
-      .btn-primary,
-      .btn-danger {
-        font-size: 14px;
-        padding: 5px 10px;
-      }
-      .cat-images img {
-        width: 120px;
-      }
-    }
-    
     @font-face {
       font-family: 'Dosis-Bold';
-      src: url('font/Dosis-Bold.ttf') format('truetype');
+      src: url('/ayang/font/Dosis-Bold.ttf') format('truetype');
     }
     body {
       font-family: 'Dosis-Bold', sans-serif;
-      cursor: url('gif/paw1.png'), auto; 
+      cursor: url('/ayang/gif/pack2662.png'), auto; 
       overflow: hidden;
       margin: 0; 
       padding: 0;
@@ -68,68 +46,51 @@
       align-items: center;
     }
     h1 {
-      font-size: 42px;
+      font-size: 28px; /* Ukuran huruf responsif */
       color: #ffffff; 
-      text-shadow: 2px 2px 2px #f48fb1; 
-      margin-bottom: 30px;
+      text-shadow: 1px 1px 1px #f48fb1; 
+      margin-bottom: 15px;
     }
     h2 {
-      font-size: 35px;
+      font-size: 24px; /* Ukuran huruf responsif */
       color: #ffffff; 
-      text-shadow: 2px 2px 2px #f48fb1; 
-      margin-bottom: 0px;
+      text-shadow: 1px 1px 1px #f48fb1; 
+      margin-bottom: 10px;
     }
     h3 {
-      font-size: 20px;
+      font-size: 16px; /* Ukuran huruf responsif */
       color: #000000; 
-      text-shadow: 2px 2px 2px #f48fb1; 
-      margin-bottom: 0px;
-    }
-    .btn-primary {
-      background-color: #ff4081; 
-      border-color: #ff4081; 
-      font-weight: bold;
-      padding: 5px 20px;
-      font-size: 18px;
-      margin: 0 10px; 
-      position: absolute; 
-      left: 40%; 
-      top: 90%; 
-      color: #ffecf2; 
-    }
-    .btn-primary:hover {
-      background-color: #f50057; 
-      border-color: #f50057; 
-    }
-    .btn-danger {
-      background-color: #ff4081; 
-      border-color: #ff4081; 
-      font-weight: bold;
-      padding: 5px 20px;
-      font-size: 18px;
-      margin: 0 10px; 
-      position: absolute; 
-      left: 54%; 
-      top: 90%; 
-      transition: transform 0.1s; 
-      color: #ffecf2; 
+      text-shadow: 1px 1px 1px #f48fb1; 
+      margin-bottom: 10px;
     }
     .cat-images {
       display: flex;
-      justify-content: space-between;
-      width: 750px; 
-      height: auto;
+      flex-wrap: wrap; /* Menyusun gambar dalam beberapa baris */
+      justify-content: center;
+      gap: 10px;
       margin-bottom: 20px; 
       border-radius: 15px;
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); 
     }
     .cat-images img {
-      width: 200px; 
-      height: auto; 
-      border: none; 
+      width: 120px; /* Ukuran gambar responsif */
+      height: auto; /* Tinggi otomatis */
+      border-radius: 8px;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .btn-primary,
+    .btn-danger {
+      padding: 8px 20px; /* Padding tombol responsif */
+      font-size: 16px; /* Ukuran huruf responsif */
+      margin: 0 10px; 
+      color: #ffecf2; 
     }
     #message {
-      font-size: 20px;
+      font-size: 16px; /* Ukuran huruf responsif */
       display: none;
       position: absolute;
       top: 10%; 
@@ -155,6 +116,30 @@
         opacity: 0.5;
       }
     }
+
+    /* Media queries untuk tampilan mobile */
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+      .cat-images img {
+        width: 100px;
+      }
+      .btn-primary,
+      .btn-danger {
+        padding: 6px 14px;
+        font-size: 14px;
+      }
+      #message {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -162,9 +147,9 @@
     <h2>Sayangku cintaku luvluvkuuu. I want to ask....</h2>
     <h1>Do you really love me?</h1>
     <div class="cat-images">
-      <img src="gif/cat-love.gif" alt="Cat Love">
-      <img src="gif/goma-goma-cat.gif" alt="Goma Goma Cat">
-      <img src="gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
+      <img src="/ayang/gif/cat-love.gif" alt="Cat Love">
+      <img src="/ayang/gif/goma-goma-cat.gif" alt="Goma Goma Cat">
+      <img src="/ayang/gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
     </div>
     <h3>please jangan tekan NO...I Warn You</h3>
     <div class="button-container">
