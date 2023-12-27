@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>for ayang</title>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/ayang/assets/css/bootstrap.min.css">
   <style>
     @font-face {
       font-family: 'Dosis-Bold';
-      src: url('font/Dosis-Bold.ttf') format('truetype');
+      src: url('/ayang/font/Dosis-Bold.ttf') format('truetype');
     }
     body {
       font-family: 'Dosis-Bold', sans-serif;
-      cursor: url('gif/pack2662.png'), auto; 
+      cursor: url('/ayang/gif/pack2662.png'), auto; 
       overflow: hidden; 
       margin: 0; 
       padding: 0; 
@@ -44,7 +44,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
+      position: relative; 
+      z-index: 1; /* Mengatur z-index agar konten di atas gambar */
     }
     h1 {
       font-size: 42px;
@@ -71,29 +72,15 @@
       padding: 5px 20px;
       font-size: 18px;
       margin: 0 10px; 
-      position: absolute; 
+      position: fixed; 
+      bottom: 20px; /* Menyesuaikan posisi tombol di bagian bawah layar */
       left: 40%; 
-      top: 85%; 
       color: #ffecf2; 
-      touch-action: manipulation; /* untuk memanipulasi gerakan sentuhan */
+      z-index: 2; /* Mengatur z-index agar tombol berada di atas latar belakang */
     }
     .btn-primary:hover {
       background-color: #f50057; 
       border-color: #f50057; 
-    }
-    .btn-danger {
-      background-color: #ff4081; 
-      border-color: #ff4081; 
-      font-weight: bold;
-      padding: 5px 20px;
-      font-size: 18px;
-      margin: 0 10px; 
-      position: absolute; 
-      left: 54%; 
-      top: 85%; 
-      transition: transform 0.1s; 
-      color: #ffecf2; 
-      touch-action: manipulation; /* untuk memanipulasi gerakan sentuhan */
     }
     .cat-images {
       display: flex;
@@ -143,9 +130,9 @@
     <h2>Sayangku cintaku luvluvkuuu. I want to ask....</h2>
     <h1>Do you really love me?</h1>
     <div class="cat-images">
-      <img src="gif/cat-love.gif" alt="Cat Love">
-      <img src="gif/goma-goma-cat.gif" alt="Goma Goma Cat">
-      <img src="gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
+      <img src="/ayang/gif/cat-love.gif" alt="Cat Love">
+      <img src="/ayang/gif/goma-goma-cat.gif" alt="Goma Goma Cat">
+      <img src="/ayang/gif/mochi-mochimochi.gif" alt="Mochi Mochimochi Cat">
     </div>
     <h3>please jangan tekan NO...I Warn You</h3>
     <div class="button-container">
@@ -177,11 +164,11 @@
       if (count >= 5) {
         message.style.display = 'block'; 
       }
-      event.preventDefault(); // Mencegah peristiwa default yang mungkin terjadi pada sentuhan
+      event.preventDefault();
     }
-    
-    // Gunakan event touchstart untuk perangkat mobile
-    noButton.addEventListener('touchstart', moveButton);
+
+    noButton.addEventListener('mousedown', moveButton); // Untuk klik mouse pada desktop
+    noButton.addEventListener('touchstart', moveButton); // Untuk sentuhan pada perangkat mobile
   </script>
 </body>
 </html>
